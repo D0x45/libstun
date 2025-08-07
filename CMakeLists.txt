@@ -16,4 +16,8 @@ file(GLOB SOURCES "src/*.c")
 
 include_directories("include")
 
+if(WIN32)
+    target_link_libraries(stun ws2_32)
+endif()
+
 add_library(stun STATIC ${SOURCES})
