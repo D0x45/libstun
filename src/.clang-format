@@ -1,0 +1,4 @@
+BasedOnStyle: LLVM
+UseTab: Never
+TabWidth: 2
+IndentWidth: 2
