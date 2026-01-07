@@ -5,7 +5,7 @@ set(CMAKE_C_STANDARD "99")
 set(CMAKE_C_FLAGS "-Wall -Wpedantic -Wextra -Wconversion")
 
 if (NOT CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-  message("WARNING: not using clang! adding -fshort-enums to cflags!")
+  message(WARNING "not using clang! adding -fshort-enums to cflags!")
   set(CMAKE_C_FLAGS "-fshort-enums ${CMAKE_C_FLAGS}")
 endif()
 
@@ -21,3 +21,6 @@ if(WIN32)
 endif()
 
 add_library(stun STATIC ${SOURCES})
+
+add_executable(test "test/main.c")
+target_link_libraries(test stun)
